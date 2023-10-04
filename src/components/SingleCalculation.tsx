@@ -11,7 +11,7 @@ const SingleCalculation: React.FC<{
     setCalculations: React.Dispatch<React.SetStateAction<Array<Calculator>>>;
     result: number;
     setResult: React.Dispatch<React.SetStateAction<number>>;
-}> = ({index, calculation, calculations, setCalculations, result, setResult}) => {
+}> = ({ calculation, calculations, setCalculations, result, setResult}) => {
     const [edit, setEdit] = useState<boolean>(false);
     const [editOperand, setEditOperand] = useState<string>(calculation.operand);
 

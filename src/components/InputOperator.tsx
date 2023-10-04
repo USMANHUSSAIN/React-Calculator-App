@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import "./styles.css";
 
 interface props {
@@ -7,14 +7,12 @@ interface props {
 }
 
 const InputOperator: React.FC<props> = ({operator, setOperator}) => {
-    const inputRef = useRef<HTMLInputElement>(null);
 
     return (
         <form
             className="input"
         >
-            <select onChange={(e) => setOperator(e.target.value)} className="input__box" value={operator}
-                    ref={inputRef}>
+            <select onChange={(e) => setOperator(e.target.value)} className="input__box" value={operator}>
                 <option value="+">Plus (+)</option>
                 <option value="-">Minus (-)</option>
             </select>

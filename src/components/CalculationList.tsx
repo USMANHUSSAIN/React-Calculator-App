@@ -26,7 +26,7 @@ const CalculationList: React.FC<props> = ({
           setCalculations={setCalculations}
           result={result}
           setResult={setResult}
-        />
+         index={index}/>
       ))}
     </div>
 
