@@ -1,36 +1,36 @@
-import React, { useRef } from "react";
+import React, {useRef} from "react";
 import "./styles.css";
 
 interface props {
-  operand: string;
-  setOperand: React.Dispatch<React.SetStateAction<string>>;
-  handleAdd: (e: React.FormEvent) => void;
+    operand: string;
+    setOperand: React.Dispatch<React.SetStateAction<string>>;
+    handleAdd: (e: React.FormEvent) => void;
 }
 
-const InputField: React.FC<props> = ({ operand, setOperand, handleAdd }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+const InputField: React.FC<props> = ({operand, setOperand, handleAdd}) => {
+    const inputRef = useRef<HTMLInputElement>(null);
 
-  return (
-    <form
-      className="input"
-      onSubmit={(e) => {
-        handleAdd(e);
-        inputRef.current?.blur();
-      }}
-    >
-      <input
-        type="text"
-        placeholder="Enter an operand"
-        value={operand}
-        ref={inputRef}
-        onChange={(e) => setOperand(e.target.value)}
-        className="input__box"
-      />
-      <button type="submit" className="input_submit">
-        GO
-      </button>
-    </form>
-  );
+    return (
+        <form
+            className="input"
+            onSubmit={(e) => {
+                handleAdd(e);
+                inputRef.current?.blur();
+            }}
+        >
+            <input
+                type="text"
+                placeholder="Enter an operand"
+                value={operand}
+                ref={inputRef}
+                onChange={(e) => setOperand(e.target.value)}
+                className="input__box"
+            />
+            <button type="submit" className="input_submit">
+                GO
+            </button>
+        </form>
+    );
 };
 
 export default InputField;
